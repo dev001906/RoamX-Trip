@@ -3,14 +3,14 @@ from typing import List, Dict, Optional,Any
 from dotenv import load_dotenv
 from langchain.tools import tool
 
-from utils.weather_info import WeatherForcastTool
+from utils.weather_info import WeatherForecastTool
 
 
 class WeatherTool:
     def __init__(self):
         load_dotenv()
         self.api_key = os.environ.get("OPENWEATHERMAP_API_KEY")
-        self.weather_service = WeatherForcastTool(self.api_key)
+        self.weather_service = WeatherForecastTool(self.api_key)
         self.weather_tool_list = self._setup_tools()
 
     def _setup_tools(self)->List:
