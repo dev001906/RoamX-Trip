@@ -4,6 +4,7 @@ langchain-experimental
 fastapi
 python-dotenv
 streamlit
+setuptools
 uvicorn
 pydantic
 python-dotenv

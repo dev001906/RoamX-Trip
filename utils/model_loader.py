@@ -2,11 +2,10 @@ import os
 from dotenv import load_dotenv
 from typing import Literal, Optional,Any
 from pydantic import BaseModel,Field
-from langchain_huggingface import HuggingFaceEmbeddings
-
 from utils.config_loader import load_config
 from langchain_groq import ChatGroq
 from langchain.chat_models import init_chat_model
+from langchain_openai import ChatOpenAI
 
 
 class ConfigLoader:
@@ -14,7 +13,7 @@ class ConfigLoader:
         print(f"Loading config......")
         self.config = load_config()
     
-    def __getitem__(slef,key):
+    def __getitem__(self,key):
         return self.config[key]
 
 class ModelLoader(BaseModel):
